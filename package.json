@@ -1,0 +1,126 @@
+{
+  "name": "thunderdome-planning-poker",
+  "version": "0.0.1",
+  "description": "Planning Poker App",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenWeathers/thunderdome-planning-poker.git"
+  },
+  "author": "Steven Weathers",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/StevenWeathers/thunderdome-planning-poker/issues"
+  },
+  "homepage": "https://github.com/StevenWeathers/thunderdome-planning-poker#readme",
+  "private": true,
+  "scripts": {
+    "build": "rollup --config build/rollup.config.js",
+    "autobuild": "rollup --config build/rollup.config.js -w",
+    "format": "prettier --write 'frontend/**/*.{js,svelte,css,html}'",
+    "format:e2e": "prettier --write 'e2e/**/*.ts'",
+    "test": "jest frontend/src",
+    "test:watch": "npm run test -- --watch",
+    "test:snapshot": "npm test -- -u"
+  },
+  "dependencies": {
+    "he": "^1.2.0",
+    "js-cookie": "^2.2.1",
+    "navaid": "^1.2.0",
+    "quill": "^1.3.7",
+    "snapsvg-cjs": "^0.0.6",
+    "sockette": "^2.0.6",
+    "svelte-dnd-action": "^0.9.18",
+    "svelte-i18n": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-html": "^0.2.4",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/svelte": "^3.1.3",
+    "autoprefixer": "^10.4.7",
+    "babel-jest": "^28.1.2",
+    "cssnano": "^5.1.12",
+    "husky": "^8.0.1",
+    "jest": "^28.1.2",
+    "jest-environment-jsdom": "^28.1.2",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.14",
+    "postcss-import": "^14.1.0",
+    "postcss-nesting": "^10.1.10",
+    "prettier": "^2.7.1",
+    "prettier-plugin-svelte": "^2.7.0",
+    "rollup": "^2.76.0",
+    "rollup-plugin-bundle-html": "^0.2.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^3.49.0",
+    "svelte-jester": "^2.3.2",
+    "svelte-preprocess": "^4.10.7",
+    "tailwindcss": "^3.1.5"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.svelte$": "svelte-jester"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "svelte"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect",
+      "./frontend/src/setupTests.js"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "proseWrap": "always",
+    "tabWidth": 4,
+    "useTabs": false,
+    "bracketSpacing": true,
+    "semi": false,
+    "arrowParens": "avoid",
+    "svelteSortOrder": "options-scripts-styles-markup",
+    "svelteStrictMode": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "frontend/**/*.{js, svelte, css, html}": [
+      "npm run format",
+      "git add"
+    ],
+    "e2e/**/*.ts": [
+      "npm run format:e2e",
+      "git add"
+    ]
+  }
+}

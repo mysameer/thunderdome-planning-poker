@@ -1,0 +1,13 @@
+.git
+dist/
+node_modules/
+.gitignore
+.gitattributes
+vendor/
+data/
+release/
+packrd/
+*-packr.go
+pkged.go
+thunderdome-planning-poker*
+swaggerdocs/
