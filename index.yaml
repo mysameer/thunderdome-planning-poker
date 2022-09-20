@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  thunderdome:
+  - apiVersion: v2
+    appVersion: 1.16.1
+    created: "2022-09-20T15:09:05.908027112Z"
+    description: A Helm chart for Kubernetes
+    digest: b76f2b9db67479ca25a1d398ebd87566109636840330bc548d199fc45d148e0c
+    name: thunderdome
+    type: application
+    urls:
+    - https://github.com/mysameer/thunderdome-planning-poker/releases/download/thunderdome-0.1.6/thunderdome-0.1.6.tgz
+    version: 0.1.6
+generated: "2022-09-20T15:09:05.908043412Z"
